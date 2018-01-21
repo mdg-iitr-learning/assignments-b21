@@ -69,7 +69,7 @@ editors, running compilers etc.
 * Online manuals :
   * man wc
   * whatis wc
-  * apropos cop
+  * apropos copy
 
 ### The directory structure
 | Path    | Description                                                                                                                                              |
@@ -204,7 +204,7 @@ To show all values of these variables, type
 ```
 
 ## Changing visibility of a process
-To send a process to background add an ambersand `&` at the end of the command, for example:
+To send a process to background add an ampersand `&` at the end of the command, for example:
 ```shell
 ~$ emacs & # This will start emacs in background, NOTE: This does not redirect the output
 ```
