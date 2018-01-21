@@ -209,52 +209,28 @@ To show all values of these variables, type
 kill, sleep, file, diff, find, history, setting up env variables etc.
 
 ## Random stuff
-
-nc localhost 1123     //to connect to port 1123
-
-
-nc -l 1234           //to listen to port 1234
-
-
-chmod               //change file permissions
-
-
-chown               //change file owner
-
-
-chgrp               //change file group
-
-
-ping -c4 8.8.8.8    //to send 4 packets to google's server at 8.8.8.8
-
-
-sudo lsof -i       //to list network sockets
-
-
+``` shell
+nc localhost 1123     # to connect to port 1123
+nc -l 1234            # to listen to port 1234
+chmod                 # change file permissions
+chown                 # change file owner
+chgrp                 # change file group
+ping -c4 8.8.8.8      # to send 4 packets to google's server at 8.8.8.8
+sudo lsof -i          # to list network sockets
+```
 DNS == Domain Name System
             DNS contains records , few of which map domain names to their IP addresses.
 
-
-host google.com   //This command can be used to look the DNS records
-
-
-dig google.com    //This command is same as host but host provides data in human
-                  //readable form whereas dig provides data in script readable form
-
-
-ip addr show    //to bring out the interfaces on your computer
-ifconfig | less //does the same as above
-
-ip route show default     //shows the address of the default gateways
-                          //default gateway is the router through which your machine
-                          //is connected to the rest of the internet
-netstat -nr               //slightly similar to above
-
-
-tcpdump -n port portName  //brings out details about the connections
-
-uname -r                  // to check for kernel version
-
-## Try at your own risk (Fork bomb)
-````bash
-  :(){ :|:& }:
+```shell
+host google.com           # This command can be used to look the DNS records
+dig google.com            # This command is same as host but host provides data in human
+                          # readable form whereas dig provides data in script readable form
+ip addr show              # to bring out the interfaces on your computer
+ifconfig | less           # does the same as above
+ip route show default     # shows the address of the default gateways
+                          # default gateway is the router through which your machine
+                          # is connected to the rest of the internet
+netstat -nr               # slightly similar to above
+tcpdump -n port portName  # brings out details about the connections
+uname -r                  #  to check for kernel version
+```
