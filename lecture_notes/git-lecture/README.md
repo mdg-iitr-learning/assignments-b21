@@ -179,11 +179,21 @@ $ export GIT_EDITOR=subl
 	$ git stash abort
 	```
 	- `git stash pop` is `git stash apply && git stash drop`
+- **`git merge`**
+
+	- #### Usage
+	```bash
+	$ git merge branchname -m "Commit message"
+	$ git merge --no-ff -m "Commit message"
+	```
+	- A fast forward merge moves the branch pointer to the head of branch that is being merged instead of creating a merge commit.
 - **`git remote`**
 	
 	- #### Usage
 	```bash
 	$ git remote add origin https://github.com/<username>/learning.git
+	$ git remote -v //list existing remotes
+	$ git remote set-url origin url.git //can change origin
 	```
 	**Note -** `.git` can be omitted.
 - **`git push`**
