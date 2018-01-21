@@ -69,7 +69,7 @@ editors, running compilers etc.
 * Online manuals :
   * man wc
   * whatis wc
-  * apropos cop
+  * apropos copy
 
 ### The directory structure
 | Path    | Description                                                                                                                                              |
@@ -134,21 +134,21 @@ For example, to remove read write and execute permissions on the file biglist fo
 | -           | take away permission           |
 
 ```shell
-chmod go-rwx biglist
+~$ chmod go-rwx biglist
 ```
 This will leave the other permissions unaffected.
 
 To give read and write permissions on the file biglist to all,
 
 ```shell
-chmod a+rw biglist
+~$ chmod a+rw biglist
 ```
 
 #### Octal permissions
 r = 4 | w = 2 | x = 1
 
 ```shell
-chmod 755 MyDir
+~$ chmod 755 MyDir
 ```
 
 ### The root user
@@ -187,9 +187,6 @@ An example of a job list could be
 * [2] Running netscape
 * [3] Running matlab
 
-
-
-
 ## UNIX variables
 Variables are a way of passing information from the shell to programs when you run them. Programs look "in the environment" for particular variables and if they are found will use the values stored. Some are set by the system, others by you, yet others by the shell, or any program that loads another program.
 
@@ -197,7 +194,7 @@ Standard UNIX variables are split into two categories, environment variables and
 
 #### Env variables
 ```shell
-echo $OSTYPE
+~$ echo $OSTYPE
 ```
 ENVIRONMENT variables are set using the setenv command, displayed using the printenv or env commands, and unset using the unsetenv command.
 
@@ -205,6 +202,19 @@ To show all values of these variables, type
 ```shell
 ~$ printenv | less
 ```
+
+## Changing visibility of a process
+To send a process to background add an ampersand `&` at the end of the command, for example:
+```shell
+~$ emacs & # This will start emacs in background, NOTE: This does not redirect the output
+```
+
+To keep a process running when even when the terminal is closed use `& disown` at the end of a command:
+```shell
+~$ emacs & disown # This will start emacs in the bg and keep it runnning even when the terminal is closed
+```
+
+To read more about `&`, `disown` and `nohup` head [here](https://unix.stackexchange.com/questions/3886/difference-between-nohup-disown-and#148698).
 ## Further exploration
 kill, sleep, file, diff, find, history, setting up env variables etc.
 
