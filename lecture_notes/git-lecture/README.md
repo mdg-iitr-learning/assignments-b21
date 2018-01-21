@@ -69,6 +69,13 @@ $ export GIT_EDITOR=subl
 <p>This will be valid only for current session of terminal.</p>
 
 
+## Use Vim Editor
+- press i to start typing
+- press esc to stop typing
+- Type :wq (w-write q-quit)
+- then press enter to exit
+
+
 ## Common commands
 - **`git status`**
 - **`git add`**
@@ -176,7 +183,6 @@ $ export GIT_EDITOR=subl
 	$ git stash pop
 	$ git stash apply
 	$ git stash drop
-	$ git stash abort
 	```
 	- `git stash pop` is `git stash apply && git stash drop`
 - **`git merge`**
