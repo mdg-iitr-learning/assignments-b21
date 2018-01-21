@@ -82,7 +82,7 @@ $ export GIT_EDITOR=subl
 	```
 	- Untracked files
 	- Tracked files
-	<p>`git add` stages the changes made to files. Also git starts tracking the *untracked files* if they are added to staging area.</p>
+	<br>`git add` stages the changes made to files. Also git starts tracking the *untracked files* if they are added to staging area.
 	- #### Three States of changes done
 		- **Committed** means that the data is safely stored in your local database.
 		- **Modified** means that you have changed the file but have not committed it to your database yet.
@@ -101,7 +101,7 @@ $ export GIT_EDITOR=subl
 	$ git reset --soft commit-id
 	```
 - **`git commit`**
-	<p>Commit is like a snapshot in time. We can return back to this commit anytime in future.</p>
+	<br>Commit is like a snapshot in time. We can return back to this commit anytime in future.
 
 	- #### Usage
 	```bash
@@ -202,4 +202,6 @@ $ export GIT_EDITOR=subl
 
 
 ## Useful Links
-https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git
+- [HEAD^ vs HEAD~](https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git)
+- [Understanding git reset and checkout](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified)
+- [Git Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
