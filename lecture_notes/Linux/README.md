@@ -72,8 +72,9 @@ editors, running compilers etc.
   * apropos cop
 
 ### The directory structure
-| /       | This is the root directory which should contain only the directories needed at the top level of the file structure                                       |
+| Path    | Description                                                                                                                                              |
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /       | This is the root directory which should contain only the directories needed at the top level of the file structure                                       |
 | /bin    | This is where the executable files are located. These files are available to all users                                                                   |
 | /dev    | These are device drivers                                                                                                                                 |
 | /etc    | Supervisor directory commands, configuration files, disk configuration files, valid user lists, groups, ethernet, hosts, where to send critical messages |
@@ -87,11 +88,14 @@ editors, running compilers etc.
 | /var    | Typically contains variable-length files such as log and print files and any other type of file that may contain a variable amount of data               |
 | /sbin   | Contains binary (executable) files, usually for system administration. For example, fdisk and ifconfig utlities                                          |
 | /kernel | Contains kernel files                                                                                                                                    |
+
 ### File system security
 
 Each file (and directory) has associated access rights, which may be found by typing ls -l. Also, ls -lg gives additional information as to which group owns the file (beng95 in the following example):
-
-  > -rwxrw-r-- 1 ee51ab beng95 2450 Sept29 11:52 file1
+```shell
+~$ ls -lg ee51ab
+-rwxrw-r-- 1 ee51ab beng95 2450 Sept29 11:52 file1
+```
 
 In the left-hand column is a 10 symbol string consisting of the symbols d, r, w, x, -, and, occasionally, s or S. If d is present, it will be at the left hand end of the string, and indicates a directory: otherwise - will be the starting symbol of the string.
 
@@ -117,29 +121,35 @@ So, in order to read a file, you must have execute permission on the directory c
 #### Changing permissions
 For example, to remove read write and execute permissions on the file biglist for the group and others, type
 
-*  u | user
-*  g | group
-*  o | other
-*  a | all
-*  r | read
-*  w | write (and delete)
-*  x  |  execute (and access directory)
-*  \+ |  add permission
-*  \- | take away permission
+| ~something~ | Description                    |
+|-------------|--------------------------------|
+| u           | user                           |
+| g           | group                          |
+| o           | other                          |
+| a           | all                            |
+| r           | read                           |
+| w           | write (and delete)             |
+| x           | execute (and access directory) |
+| +           | add permission                 |
+| -           | take away permission           |
 
-> chmod go-rwx biglist
-
+```shell
+chmod go-rwx biglist
+```
 This will leave the other permissions unaffected.
 
 To give read and write permissions on the file biglist to all,
 
-> chmod a+rw biglist
+```shell
+chmod a+rw biglist
+```
 
 #### Octal permissions
 r = 4 | w = 2 | x = 1
 
-
-> chmod 755 MyDir
+```shell
+chmod 755 MyDir
+```
 
 ### The root user
 Both su and sudo are used to run commands with root permissions. The root user is basically equivalent to the administrator user on Windows – the root user has maximum permissions and can do anything to the system. Normal users on Linux run with reduced permissions – for example, they can’t install software or write to system directories.
@@ -157,7 +167,9 @@ Sudo runs a single command with root privileges. When you execute sudo command, 
 
 A process is an executing program identified by a unique PID (process identifier). To see information about your processes, with their associated PID and status, type
 
-> ps
+```shell
+~$ ps
+```
 
 A process may be in the foreground, in the background, or be suspended. In general the shell does not return the UNIX prompt until the current process has finished executing.
 
@@ -165,7 +177,9 @@ Some processes take a long time to run and hold up the terminal. Backgrounding a
 
 When a process is running, backgrounded or suspended, it will be entered onto a list along with a job number. To examine this list, type
 
-> jobs
+```shell
+~$ jobs
+```
 
 An example of a job list could be
 
@@ -182,15 +196,15 @@ Variables are a way of passing information from the shell to programs when you r
 Standard UNIX variables are split into two categories, environment variables and shell variables. In broad terms, shell variables apply only to the current instance of the shell and are used to set short-term working conditions; environment variables have a farther reaching significance, and those set at login are valid for the duration of the session. By convention, environment variables have UPPER CASE and shell variables have lower case names.
 
 #### Env variables
-
-> echo $OSTYPE
-
+```shell
+echo $OSTYPE
+```
 ENVIRONMENT variables are set using the setenv command, displayed using the printenv or env commands, and unset using the unsetenv command.
 
 To show all values of these variables, type
-
-> printenv | less
-
+```shell
+~$ printenv | less
+```
 ## Further exploration
 kill, sleep, file, diff, find, history, setting up env variables etc.
 
