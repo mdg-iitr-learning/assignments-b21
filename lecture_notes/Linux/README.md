@@ -1,57 +1,70 @@
 # The Unix OS
 
-Made up of three parts kernel,shell and programs.
+Made up of three parts kernel, shell and programs.
 
 ### The kernel
 
-The kernel of UNIX is the hub of the operating system: it allocates time and memory to
- programs and handles the filestore and communications in response to system calls.
+The kernel of UNIX is the hub of the operating system: it allocates
+ time and memory to programs and handles the filestore and
+ communications in response to system calls.
 
-As an illustration of the way that the shell and the kernel work together, suppose a user types rm myfile (which has the effect of removing the file myfile). The shell searches the filestore for the file containing the program rm, and then requests the kernel, through system calls, to execute the program rm on myfile. When the process rm myfile has finished running, the shell then returns the UNIX prompt % to the user, indicating that it is waiting for further commands.
+As an illustration of the way that the shell and the kernel work
+together, suppose a user types `rm myfile` (which has the effect of
+removing the file myfile). The shell searches the filestore for the
+file containing the program `rm`, and then requests the kernel,
+through system calls, to execute the program rm and passes the file
+name as a parameter. When the process `rm myfile` has finished
+running, the shell then returns the UNIX prompt % to the user,
+indicating that it is waiting for further commands.
 
 ### The shell
 
-The shell acts as an interface between the user and the kernel.
-When a user logs in, the login program checks the username and password,
-and then starts another program called the shell. The shell is a command line interpreter (CLI). It interprets the commands the user types in and arranges for them to be carried out.
-The commands are themselves programs: when they terminate, the shell gives the user another prompt (% on our systems).
+The shell acts as an interface between the user and the kernel. When
+a user logs in, the login program checks the username and password,
+and then starts another program called the shell. A shell is a
+command line interpreter (CLI). It interprets the commands the user
+types in and arranges for them to be carried out.  The commands are
+themselves programs: when they terminate, the shell gives the user
+another prompt (% on our systems).
 
 ### Files and processes
 
 Everything in UNIX is either a file or a process.
 
-A process is an executing program identified by a unique PID (process identifier).
+A process is an executing program identified by a unique PID (process
+identifier).
 
-A file is a collection of data. They are created by users using text editors, running compilers etc.
+A file is a collection of data. They are created by users using text
+editors, running compilers etc.
 
 ### Some common commands
 
-* >ls : list of files (can also be used as ls {dir_name})
-  * -a : files that are normally hidden
-* >mkdir : To make a subdirectory called unixstuff in your current working
+* `ls` : list of files (can also be used as ls {dir_name})
+  * `-a` : files that are normally hidden
+* `mkdir` : To make a subdirectory called unixstuff in your current working
  directory type
 
-* > cp file1 file2 : to copy
-* > mv file1 file2  : to move/rename
-* > clear : clear screen
-* > cat : to difplay contents
-* > less : same as above but one page at a time
-* > head : display first 10 lines (can also be used as head -5 filename)
-* > tail : display the last 10 lines
-* > grep string filename : It searches files for specified words or patterns. First clear the screen
+* `cp path1 path2` : to copy file specified by path1 to the destination specified by path2
+* `mv path1 path2`  : to move/rename
+* `clear` : clear screen
+* `cat` : to display contents
+* `less` : same as above but one page at a time
+* `head` : display first 10 lines (can also be used as head -5 filename)
+* `tail` : display the last 10 lines
+* `grep string filename` : It searches files for specified words or patterns. First clear the screen
   * The grep command is case sensitive; it distinguishes between Science and science.
   * To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol)
-  * -v display those lines that do NOT match
-  * -n precede each matching line with the line number
-  * -c print only the total count of matched lines
-  * -i To ignore upper/lower case distinctions
-  * eg : grep -ivc science science.txt
-* > wc : word count
-  * -w for words
-  * -l for lines
-* \> : Redirects the output . for eg : cat > eg
-* \>> : append
-* | : pipe
+  * `-v` display those lines that do NOT match
+  * `-n` precede each matching line with the line number
+  * `-c` print only the total count of matched lines
+  * `-i` To ignore upper/lower case distinctions
+  * `eg` : grep -ivc science science.txt
+* `wc` : word count
+  * `-w` for words
+  * `-l` for lines
+* `\>` : Redirects the output (stdout). for eg : cat > eg
+* `\>>` : append
+* `|` : pipe
 * sort / who / \*,? wildcard
 * Online manuals :
   * man wc
