@@ -56,7 +56,37 @@ A file is a collection of data. They are created by users using text editors, ru
 * Online manuals :
   * man wc
   * whatis wc
-  * apropos copy
+  * apropos cop
+
+### The directory structure
+>  /
+  This is the root directory which should contain only the directories needed at the top level of the file structure  <br><br>
+  /bin
+  This is where the executable files are located. These files are available to all users<br><br>
+  /dev
+  These are device drivers<br><br>
+  /etc
+  Supervisor directory commands, configuration files, disk configuration files, valid user lists, groups, ethernet, hosts, where to send critical messages<br><br>
+  /lib
+  Contains shared library files and sometimes other kernel-related files<br><br>
+  /boot
+  Contains files for booting the system<br><br>
+  /home
+  Contains the home directory for users and other accounts<br><br>
+  /mnt
+  Used to mount other temporary file systems, such as cdrom and floppy for the CD-ROM drive and floppy diskette drive, respectively<br><br>
+  /proc
+  Contains all processes marked as a file by process number or other information that is dynamic to the system<br><br>
+  /tmp
+  Holds temporary files used between system boots<br><br>
+  /usr
+  Used for miscellaneous purposes, and can be used by many users. Includes administrative commands, shared files, library files, and others<br><br>
+  /var
+  Typically contains variable-length files such as log and print files and any other type of file that may contain a variable amount of data<br><br>
+  /sbin
+  Contains binary (executable) files, usually for system administration. For example, fdisk and ifconfig utlities<br><br>
+  /kernel
+  Contains kernel files<br><br>
 
 ### File system security
 
@@ -112,6 +142,18 @@ r = 4 | w = 2 | x = 1
 
 > chmod 755 MyDir
 
+### The root user
+Both su and sudo are used to run commands with root permissions. The root user is basically equivalent to the administrator user on Windows – the root user has maximum permissions and can do anything to the system. Normal users on Linux run with reduced permissions – for example, they can’t install software or write to system directories.
+
+To do something that requires these permissions, you’ll have to acquire them with su or sudo.
+
+### SU vs sudo
+The su command switches to the super user – or root user – when you execute it with no additional options. You’ll have to enter the root account’s password. This isn’t all the su command does, though – you can use it to switch to any user account. If you execute the su bob command, you’ll be prompted to enter Bob’s password and the shell will switch to Bob’s user account.
+
+Once you’re done running commands in the root shell, you should type exit to leave the root shell and go back to limited-privileges mode.
+
+Sudo runs a single command with root privileges. When you execute sudo command, the system prompts you for your current user account’s password before running command as the root user. By default, Ubuntu remembers the password for fifteen minutes and won’t ask for a password again until the fifteen minutes are up.
+
 ### Processes and Jobs
 
 A process is an executing program identified by a unique PID (process identifier). To see information about your processes, with their associated PID and status, type
@@ -152,3 +194,54 @@ To show all values of these variables, type
 
 ## Further exploration
 kill, sleep, file, diff, find, history, setting up env variables etc.
+
+## Random stuff
+
+nc localhost 1123     //to connect to port 1123
+
+
+nc -l 1234           //to listen to port 1234
+
+
+chmod               //change file permissions
+
+
+chown               //change file owner
+
+
+chgrp               //change file group
+
+
+ping -c4 8.8.8.8    //to send 4 packets to google's server at 8.8.8.8
+
+
+sudo lsof -i       //to list network sockets
+
+
+DNS == Domain Name System
+            DNS contains records , few of which map domain names to their IP addresses.
+
+
+host google.com   //This command can be used to look the DNS records
+
+
+dig google.com    //This command is same as host but host provides data in human
+                  //readable form whereas dig provides data in script readable form
+
+
+ip addr show    //to bring out the interfaces on your computer
+ifconfig | less //does the same as above
+
+ip route show default     //shows the address of the default gateways
+                          //default gateway is the router through which your machine
+                          //is connected to the rest of the internet
+netstat -nr               //slightly similar to above
+
+
+tcpdump -n port portName  //brings out details about the connections
+
+uname -r                  // to check for kernel version
+
+## Try at your own risk (Fork bomb)
+````bash
+  :(){ :|:& }:
