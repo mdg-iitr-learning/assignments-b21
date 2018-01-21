@@ -72,35 +72,21 @@ editors, running compilers etc.
   * apropos cop
 
 ### The directory structure
->  /
-  This is the root directory which should contain only the directories needed at the top level of the file structure  <br><br>
-  /bin
-  This is where the executable files are located. These files are available to all users<br><br>
-  /dev
-  These are device drivers<br><br>
-  /etc
-  Supervisor directory commands, configuration files, disk configuration files, valid user lists, groups, ethernet, hosts, where to send critical messages<br><br>
-  /lib
-  Contains shared library files and sometimes other kernel-related files<br><br>
-  /boot
-  Contains files for booting the system<br><br>
-  /home
-  Contains the home directory for users and other accounts<br><br>
-  /mnt
-  Used to mount other temporary file systems, such as cdrom and floppy for the CD-ROM drive and floppy diskette drive, respectively<br><br>
-  /proc
-  Contains all processes marked as a file by process number or other information that is dynamic to the system<br><br>
-  /tmp
-  Holds temporary files used between system boots<br><br>
-  /usr
-  Used for miscellaneous purposes, and can be used by many users. Includes administrative commands, shared files, library files, and others<br><br>
-  /var
-  Typically contains variable-length files such as log and print files and any other type of file that may contain a variable amount of data<br><br>
-  /sbin
-  Contains binary (executable) files, usually for system administration. For example, fdisk and ifconfig utlities<br><br>
-  /kernel
-  Contains kernel files<br><br>
-
+| /       | This is the root directory which should contain only the directories needed at the top level of the file structure                                       |
+|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /bin    | This is where the executable files are located. These files are available to all users                                                                   |
+| /dev    | These are device drivers                                                                                                                                 |
+| /etc    | Supervisor directory commands, configuration files, disk configuration files, valid user lists, groups, ethernet, hosts, where to send critical messages |
+| /lib    | Contains shared library files and sometimes other kernel-related files                                                                                   |
+| /boot   | Contains files for booting the system                                                                                                                    |
+| /home   | Contains the home directory for users and other accounts                                                                                                 |
+| /mnt    | Used to mount other temporary file systems, such as cdrom and floppy for the CD-ROM drive and floppy diskette drive, respectively                        |
+| /proc   | Contains all processes marked as a file by process number or other information that is dynamic to the system                                             |
+| /tmp    | Holds temporary files used between system boots                                                                                                          |
+| /usr    | Used for miscellaneous purposes, and can be used by many users. Includes administrative commands, shared files, library files, and others                |
+| /var    | Typically contains variable-length files such as log and print files and any other type of file that may contain a variable amount of data               |
+| /sbin   | Contains binary (executable) files, usually for system administration. For example, fdisk and ifconfig utlities                                          |
+| /kernel | Contains kernel files                                                                                                                                    |
 ### File system security
 
 Each file (and directory) has associated access rights, which may be found by typing ls -l. Also, ls -lg gives additional information as to which group owns the file (beng95 in the following example):
