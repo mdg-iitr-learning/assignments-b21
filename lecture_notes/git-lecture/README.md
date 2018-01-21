@@ -63,7 +63,8 @@ $ git config --global core.editor "atom --wait"
 ```
 **OR**<br> 
 ```bash
-$ export GIT_EDITOR=subl```
+$ export GIT_EDITOR=subl
+```
 
 <p>This will be valid only for current session of terminal.</p>
 
