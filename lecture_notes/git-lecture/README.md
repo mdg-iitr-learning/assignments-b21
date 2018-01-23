@@ -100,7 +100,7 @@ $ export GIT_EDITOR=subl
 		**Note -**<br> Working Directory is also knows as **Working Tree**. Also, the Staging Area is referred to as **Index**. It acts as an interface between working tree and repository.
 		- Any time you see your project, its state can be understood as 
 			> Project = ".git Repository" + "changes in Index" + "changes in Working directory"
-		- Although commands like `git diff` shows us these changes, remember that these "changes" are actually "whole files" as mentioned in [this section](git-vs-other-vcss) 
+		- Although commands like `git diff` shows us these changes, remember that these "changes" are actually "whole files" as mentioned in [this section](#git-vs-other-vcss) 
 		- Changes are "staged", if they are in the "Index" and unstaged if they are in the "Working directory".
 
 - **`git reset`**
