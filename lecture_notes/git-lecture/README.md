@@ -125,7 +125,7 @@ $ export GIT_EDITOR=subl
 	- Amend previous commit
 	```bash
 	$ git commit --amend -m "Change previous commit message"
-	$ git commit --amend --no-edit # Modify previous commit but keep the same commit message same
+	$ git commit --amend --no-edit # Modify previous commit but keep the commit message same
 	```
 	If we have some changes that we would like to include in the last commit, we use `--amend` flag with `git commit`. This new commit contains all the newly staged changes as well as the changes that were committed in the last commit. The new commit is not same as the previous commit. Therefore, if origin/branch has the old commit and you push an "ammended commit" then your branch will diverge!
 
