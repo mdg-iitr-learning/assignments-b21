@@ -1,0 +1,44 @@
+ssh bandit0@hostname -p 2220 
+cat readme
+level 1 pswd : boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+ssh bandit1@hostname -p 2220 
+cat .\-
+level 2 pswd : CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+ssh bandit2@hostname -p 2220 
+cat "spaces in this filename"
+level 3 pswd : UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+ssh bandit3@hostname -p 2220 
+cd inhere
+ll
+cat ./.hidden
+level 4 pswd : pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+ssh bandit4@hostname -p 2220 
+cd inhere
+ll
+file ./-*
+cat ./-fil07
+level 5 pswd : koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+ssh bandit5@hostname -p 2220 
+cd inhere
+ll
+file ./*/*
+find ./ -size 1033c
+cat ./maybehere07/.file2
+level 6 pswd : DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+-user bandit7 -group bandit6 -size 33c 
+level 7 pswd : HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+cat data.txt | grep millionth
+level 8 pswd : cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+level 9 pswd : UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+level 10 pwsd : truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+level 11 pswd : IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+level 12 pswd : 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+level 13 pswd : 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
