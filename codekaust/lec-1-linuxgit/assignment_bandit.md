@@ -72,5 +72,33 @@ how to -      in your terminal
 					pwd -         cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 			  in server's terminal 
 			  		cat data.txt| tr '[:space:]' '[\n*]' | sort | uniq -c | sort -bnr
-			  		the line which occurs ans is password to next level
+			  		the line which occurs ans is password to next levelcodekaust-lec-1-linuxgit
+
+Level 9 to 10
+how to -      in your terminal
+					ssh -p 2220 bandit9@bandit.labs.overthewire.org 
+					pwd -         UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR      
+			  in server's terminal 
+			  		strings data.txt
+			  		the string just after ========== is password
+
+Level 10 to 11
+how to -      in your terminal
+					ssh -p 2220 bandit10@bandit.labs.overthewire.org 
+					pwd -         truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+			  in server's terminal 
+			  		cat data.txt
+			  		base64 -d data.txt
+
+Level 11 to 12
+how to -      in your terminal
+					ssh -p 2220 bandit11@bandit.labs.overthewire.org 
+					pwd -         IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+			  in server's terminal
+			  		cat data.txt
+			  		copy text and decode from rot13 decoder
+			  		
+
+
+
 
