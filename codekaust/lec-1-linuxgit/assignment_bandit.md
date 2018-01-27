@@ -36,7 +36,7 @@ how to -      in your terminal
 					pwd -         pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 			  in server's terminal 
 	  				cd inhere
-			  		try for cat ./-file0i for all i
+			  		//try for cat ./-file0i for all i
 			  		cat ./-file07
 
 Level 5 to 6
@@ -72,7 +72,7 @@ how to -      in your terminal
 					pwd -         cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 			  in server's terminal 
 			  		cat data.txt| tr '[:space:]' '[\n*]' | sort | uniq -c | sort -bnr
-			  		the line which occurs ans is password to next levelcodekaust-lec-1-linuxgit
+			  		//the line which occurs ans is password to next levelcodekaust-lec-1-linuxgit
 
 Level 9 to 10
 how to -      in your terminal
@@ -96,7 +96,7 @@ how to -      in your terminal
 					pwd -         IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 			  in server's terminal
 			  		cat data.txt
-			  		copy text and decode from rot13 decoder
+			  		//copy text and decode from rot13 decoder
 
 Level 12 to 13
 how to -      in your terminal
@@ -131,11 +131,21 @@ how to -      in your terminal
 					file data8
 					cat data8
 
-Level 12 to 13
+Level 13 to 14
 how to -      in your terminal
 					ssh -p 2220 bandit13@bandit.labs.overthewire.org 
 					pwd -         8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
-			  in server's terminal			  		
+			  in server's terminal	
+			  		ls    
+			  		//sshkey.private is the privatekey	
+			  		ssh -i ./sshkey.private bandit14@localhost
+			  		cd /etc/bandit_pass
+			  		ls
+			  		cat bandit14
+			  		//this gives you the password for this level
+
+	  		
+
 
 
 
