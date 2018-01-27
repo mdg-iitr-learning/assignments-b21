@@ -97,7 +97,45 @@ how to -      in your terminal
 			  in server's terminal
 			  		cat data.txt
 			  		copy text and decode from rot13 decoder
-			  		
+
+Level 12 to 13
+how to -      in your terminal
+					ssh -p 2220 bandit12@bandit.labs.overthewire.org 
+					pwd -         5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+			  in server's terminal
+			  		mkdir /tmp/anyrandomnamehahaha
+			  		cp data.txt /tmp/anyrandomnamehahaha
+			  		cd /tmp/anyrandomnamehahaha
+			  		xxd -r data.txt > data
+			  		file data
+			  		mv data data.gz
+			  		gzip -d data.gz
+			  		file data 
+			  		mv data data.bz2
+			  		bzip2 -d data.bz2
+			  		file data
+			  		mv data data.gz
+			  		gzip -d data.gz
+			  		file data
+			  		mv data data.tar
+			  		tar -xvf data.tar
+			  		file data5.bin
+			  		mv data5.bin data5.tar
+			  		tar -xvf data5.tar
+			  		file data6.bin
+			  		mv data6.bin data6.tar
+			  		tar -xvf data6.tar
+			  		file data8.bin
+			  		mv data8.bin data8.gz
+			  		gzip -d data8.gz
+					file data8
+					cat data8
+
+Level 12 to 13
+how to -      in your terminal
+					ssh -p 2220 bandit13@bandit.labs.overthewire.org 
+					pwd -         8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+			  in server's terminal			  		
 
 
 
