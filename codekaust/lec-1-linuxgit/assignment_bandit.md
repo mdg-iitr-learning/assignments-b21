@@ -74,6 +74,10 @@ how to -      in your terminal
 			  		cat data.txt| tr '[:space:]' '[\n*]' | sort | uniq -c | sort -bnr
 			  		//the line which occurs ans is password to next levelcodekaust-lec-1-linuxgit
 
+			  		//can also use
+			  		cat data.txt|sort|uniq -u
+
+
 Level 9 to 10
 how to -      in your terminal
 					ssh -p 2220 bandit9@bandit.labs.overthewire.org 
@@ -142,11 +146,27 @@ how to -      in your terminal
 			  		cd /etc/bandit_pass
 			  		ls
 			  		cat bandit14
-			  		//this gives you the password for this level
+			  		//this gives you the password for level14 as 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
 
-	  		
+Level 14 to 15
+how to -      in your terminal
+					ssh -p 2220 bandit14@bandit.labs.overthewire.org 
+					pwd -         4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+			  in server's terminal
+			  		nc localhost 30000
+			  		// gives pw as BfMYroe26WYalil77FoDi9qh59eK5xNr
 
 
+Level 15 to 16
+how to -      in your terminal
+					ssh -p 2220 bandit15@bandit.labs.overthewire.org 
+					pwd -         BfMYroe26WYalil77FoDi9qh59eK5xNr
+			  in server's terminal
+					openssl s_client -ign_eof -connect localhost:30001
+					//enter password of this level BfMYroe26WYalil77FoDi9qh59eK5xNr
+					//password comes as cluFn7wTiGryunymYOu4RcffSxQluehd
 
-
-
+Level 16 to 17
+how to -      in your terminal
+					ssh -p 2220 bandit16@bandit.labs.overthewire.org 
+					pwd -         cluFn7wTiGryunymYOu4RcffSxQluehd
