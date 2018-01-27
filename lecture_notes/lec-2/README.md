@@ -1,5 +1,6 @@
-# Basics of Android layouts and views.
-<center>![ViewStructure](./view_structure.png)</center><br>
+# Basics of Android layouts and views.<br><br> 
+**STRUCTURE**
+    <center>![ViewStructure](./view_structure.png)</center><br>
 
 ## What is a ViewGroup?
 A viewgroup is a parent class of all the views. It holds all the children views (and viewgroups) within, as depicted by the structure above.<br>
@@ -106,7 +107,7 @@ A viewgroup is a parent class of all the views. It holds all the children views 
     - The layout editor uses constraints to identify the position of a view on the screen.
     - The attributes like `android:layout_constraintTop_toTopOf`, `android:layout_constraintTop_toBottomOf` and other similar attributes are used to set constraints to views w.r.t. other views.
     - It supports **chaining** of views, using which the views can be easily positioned over a space, and works much better than using a combo of weights and gravity to achieve a configuration. The attributes `android:layout_constraintHorizontal_chainStyle` and `android:layout_constraintVertical_chainStyle` can be supplied various values to produce the following effects:<br><br>
-         <center>![chains](./chains.png)</center><br><br>
+          <center>![chains](chains.png)</center><br><br>
     - Supports horizontal and vertical bias,by which we can tweak the positioning to favor one side over another using the bias attributes.<br><br>
 
     **Usage:** 
@@ -127,18 +128,6 @@ A viewgroup is a parent class of all the views. It holds all the children views 
        - As a top-level application decor or chrome layout
        - As a container for a specific interaction with one or more child views
     - By specifying Behaviors for child views of a CoordinatorLayout you can provide many different interactions within a single parent and those views can also interact with one another. View classes can specify a default behavior when used as a child of a CoordinatorLayout using the DefaultBehavior annotation.
-    
-    
-
-## What is an Adapter and AdapterView?
-
-- Whenever Data is dynamic and is determined at runtime, we have to use an AdapterView like ListView, GridView, Spinner etc. to load views.
-- An Adapter object acts as a bridge between an AdapterView and the underlying data for that view. 
-- The Adapter provides access to the data items.
-- The Adapter is also responsible for making a View for each item in the data set.
-
-
-## What is a ViewHolder?      
 
 ## What is a List View?
 - A list view is an adapter view that does not know the details, such as type and contents, of the views it contains. Instead list view requests views on demand from a ListAdapter as needed, such as to display new views as the user scrolls up or down.
@@ -154,5 +143,30 @@ A viewgroup is a parent class of all the views. It holds all the children views 
 - **Reuses cells while scrolling up/down** - this is possible with implementing View Holder in the listView adapter, but it was an optional thing, while in the RecycleView it's the default way of writing adapter.
 - **Decouples list from its container** - so you can put list items easily at run time in the different containers (linearLayout, gridLayout) with setting LayoutManager.
 - **Animates common list actions** - Animations are decoupled and delegated to ItemAnimator.
+    
+## What is an Adapter and AdapterView?
+- Whenever Data is dynamic and is determined at runtime, we have to use an AdapterView like ListView, GridView, Spinner etc. to load views.
+- An Adapter object acts as a bridge between an AdapterView and the underlying data for that view. 
+- The Adapter provides access to the data items.
+- The Adapter is also responsible for making a View for each item in the data set.
 
+## What is a ViewHolder?
+- It helps you to minimize the number of `findViewById()` calls by caching the results in a holder object.
+- In case of ListViews and RecyclerViews, where a single layout file is used for all the views, it can be time consuming to access `findViewById()` again and again.
+- `ViewHolder` can reduce this by providing a tag to each listItem so that you can immediately access them without the need to look them up repeatedly.
 
+## Custom Views
+- We can even create our custom views by extending the `View` class and using a combo of `Canvas` and `Paint`.
+
+## Some general trivia
+- Padding and Margin: 
+    - `android:padding` attribute adjusts the position of a view's content from its borders internally.
+    - `android:margin` attribute changes the distance of the borders of a view from its parent/view on which it depends.
+
+- Gravity and LayoutGravity:
+    - `android:layout_gravity` attribute is used to provide gravity (positioning w.r.t parent) to the entire view box.
+    - `android:gravity` attribute is used to provide gravity to a view's contents, so that it is positioned accordingly within the view box.
+
+- Baseline:
+    - In a `RelativeLayout`, if you add `layout_alignBaseline` to a textView, the text in that view will scoot to align with the baseline of the specified element. The text from both elements will appear as if they were written on the same invisible line.
+    - Have a look at an example [here](https://stackoverflow.com/questions/6447361/what-is-the-baseline-in-relativelayout)           
