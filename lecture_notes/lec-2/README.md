@@ -1,4 +1,4 @@
-# Android Basics, ViewGroups and common attributes
+# Basics of Android layouts and views.
 <center>![ViewStructure](./view_structure.png)</center><br>
 
 ## What is a ViewGroup?
@@ -31,6 +31,7 @@ A viewgroup is a parent class of all the views. It holds all the children views 
         </AbsoluteLayout> 
 
 <br>
+
 - **Frame Layout**
     - It is usually used to block out an area on the screen and display only a single child on screen.
     - If multiple children are used within it then all the children are placed on top of each other.
@@ -66,6 +67,8 @@ A viewgroup is a parent class of all the views. It holds all the children views 
         
         > **TRIVIA**: What would happen if the `weightSum` is less than the sum of weights given to children explicitly?  
 
+<br>
+
 - **Relative Layout**
     - Relative Layout enables you to specify how child views are positioned relative to each other.
     - The position of each view can be specified as relative to sibling elements or relative to the parent.<br><br>
@@ -82,6 +85,47 @@ A viewgroup is a parent class of all the views. It holds all the children views 
 
 <br>
 
-- **
+- **PercentRelativeLayout**
+    - Instead of specifying the width and height of a child, we can provide a percentage of screen width or height to use.
+    - It is very useful in scaling layouts to various screen sizes.
+    - The `PercentSupportLayout` supports two pre-built layout - `PercentRelativeLayout` and `PercentFrameLayout`.
+    - Find an example for this [here](https://inthecheesefactory.com/blog/know-percent-support-library/en).
+
+<br>    
+
+- **ScrollView**
+    - It is a subclass of FrameLayout, as the name says it is used when your contents do not fit the screen and tend to overflow.
+    - ScrollView can hold **only one** direct child. This means that you need to wrap all your views into a single viewgroup in order to use it within a ScrollView. 
+    - ScrollView only supports vertical scrolling. Use `HorizontalScrollView` if you want to have horizontal scrolling.
+    - It is advised **not** to use ScrollView with `ListView`, `GridView` and `Recycler View` as they take care of their own vertical scrolling.
+
+<br>
+
+- **Constraint Layout**
+    - Constraint Layout is a new ViewGroup for android. The main motive of constraint layout is to design layouts which are flexible and look the same in all screen sizes.
+    - The layout editor uses constraints to identify the position of a view on the screen.
+    - The attributes like `android:layout_constraintTop_toTopOf`, `android:layout_constraintTop_toBottomOf` and other similar attributes are used to set constraints to views w.r.t. other views.
+    - It supports **chaining** of views, using which the views can be easily positioned over a space, and works much better than using a combo of weights and gravity to achieve a configuration. The attributes `android:layout_constraintHorizontal_chainStyle` and `android:layout_constraintVertical_chainStyle` can be supplied various values to produce the following effects:<br><br>
+         <center>![chains](./chains.png)</center><br><br>
+    - Supports horizontal and vertical bias,by which we can tweak the positioning to favor one side over another using the bias attributes.<br><br>
+
+    **Usage:** 
+    <br><br>
+
+            <android.support.constraint.ConstraintLayout ...>
+                <Button android:id="@+id/button" ...
+                  app:layout_constraintHorizontal_bias="0.3"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent/>
+    - The above code produces a button like:<br><br>
+    ![bias](./bias.png) <br><br>
+    - It also provides a view called `Guideline` using which you can have an imaginary line (which is not a view) anywhere on the screen and position views according to it. You can position this guideline by providing it either a fixed value or a percentage value (w.r.t. the screen). 
+
+   
+
+## What is an Adapter and AdapterView?
+
+## What is a ViewHolder?      
+
 
 
