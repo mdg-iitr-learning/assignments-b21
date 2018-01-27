@@ -5,52 +5,53 @@
 ### 27th January 2018
 
 ### LEVEL-0
-Log into server using -
-ssh bandit0@bandit.labs.overthewire.org -p 2220
-Password:bandit0
+Log into server using -<br>
+ssh bandit0@bandit.labs.overthewire.org -p 2220<br>
+Password:bandit0<br>
 
 
 ### LEVEL-0 > 1
-Ls
-Cat readme
-(Password found) boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+Ls<br>
+Cat readme<br>
+(Password found) boJ9jbbUNNfktd78OOpsqOltutMc3MY1<br>
 
 
 ### LEVEL-1 > 2
-Login using - ssh bandit1@bandit.labs.overthewire.org -p 2220
-Password:boJ9jbbUNNfktd78OOpsqOltutMc3MY1
-Ls
-Cat ./-
-(Password found)CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+Login using - ssh bandit1@bandit.labs.overthewire.org -p 2220<br>
+Password:boJ9jbbUNNfktd78OOpsqOltutMc3MY1<br>
+Ls<br>
+Cat ./-<br>
+(Password found)CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9<br>
 
 
 ### LEVEL-2 > 3
-Login using - ssh bandit2@bandit.labs.overthewire.org -p 2220
-Password:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
-Ls
- cat "spaces in this filename" or spaces\ in\ this\ filename
-{Password found) UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+Login using - ssh bandit2@bandit.labs.overthewire.org -p 2220<br>
+Password:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9<br>
+Ls<br>
+ cat "spaces in this filename" or spaces\ in\ this\ filename<br>
+{Password found) UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK<br>
 
 
 ### LEVEL-3 > 4
-Login using - ssh bandit3@bandit.labs.overthewire.org -p 2220
-Password:UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
-Ls
-Cd inhere
-Ls
-Ls -a
-Cat .hidden
-{Password found) pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+Login using - ssh bandit3@bandit.labs.overthewire.org -p 2220<br>
+Password:UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK<br>
+Ls<br>
+Cd inhere<br>
+Ls<br>
+Ls -a<br>
+Cat .hidden<br>
+{Password found) pIwrPrtPN36QITSp3EQaw936yaFoFgAB<br>
 
 
 ### LEVEL-4 > 5
-Login using - ssh bandit4@bandit.labs.overthewire.org -p 2220
-Password:pIwrPrtPN36QITSp3EQaw936yaFoFgAB
-Ls
-Cd inhere
-Ls
-File ./*
-Output -
+Login using - ssh bandit4@bandit.labs.overthewire.org -p 2220<br>
+Password:pIwrPrtPN36QITSp3EQaw936yaFoFgAB<br>
+Ls<br>
+Cd inhere<br>
+Ls<br>
+File ./*<br>
+Output -<br>
+```
 ./-file00: data
 ./-file01: data
 ./-file02: data
@@ -62,7 +63,8 @@ Output -
 ./-file08: data
 ./-file09: data
 Cat ./-file07
-{Password found) koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+```
+{Password found) koReBOKuIDDepwhWk7jZC0RTdopnAYKh<br>
 
 
 
@@ -72,68 +74,69 @@ Cat ./-file07
 
 
 ### LEVEL-5 > 6
-Login using - ssh bandit5@bandit.labs.overthewire.org -p 2220
-Password:koReBOKuIDDepwhWk7jZC0RTdopnAYKh
-Cd inhere
-Ls
-Find . -size 1033c
-Output : ./maybehere07/.file2
-Cd maybehere07
-Cat .file2
-(Password found)DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+Login using - ssh bandit5@bandit.labs.overthewire.org -p 2220<br>
+Password:koReBOKuIDDepwhWk7jZC0RTdopnAYKh<br>
+Cd inhere<br>
+Ls<br>
+Find . -size 1033c<br>
+Output : ./maybehere07/.file2<br>
+Cd maybehere07<br>
+Cat .file2<br>
+(Password found)DXjZPULLxYr17uwoI01bNLQbtFemEgo7<br>
 
 
 ### LEVEL-6 > 7
-Login using - ssh bandit6@bandit.labs.overthewire.org -p 2220
-Password:DXjZPULLxYr17uwoI01bNLQbtFemEgo7
-Cd ..
-Cd ..
-Find , -size 33c -a -user bandit7 -a -group bandit6
-Only one result which dose’nt shows Permission denied or No such file ……
-Cd /var/lib/dpkg/info
-Cat bandit7.password
-(Password found)HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+Login using - ssh bandit6@bandit.labs.overthewire.org -p 2220<br>
+Password:DXjZPULLxYr17uwoI01bNLQbtFemEgo7<br>
+Cd ..<br>
+Cd ..<br>
+Find , -size 33c -a -user bandit7 -a -group bandit6<br>
+Only one result which dose’nt shows Permission denied or No such file ……<br>
+Cd /var/lib/dpkg/info<br>
+Cat bandit7.password<br>
+(Password found)HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs<br>
 
 
 
 ### LEVEL-7 > 8
-Login using - ssh bandit7@bandit.labs.overthewire.org -p 2220
-Password:HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
-Ls
-Grep ‘millionth’ data.txt
-(Password found)cvX2JJa4CFALtqS87jk27qwqGhBM9plV
-LEVEL-8 > 9
-Login using - ssh bandit8@bandit.labs.overthewire.org -p 2220
-Password:cvX2JJa4CFALtqS87jk27qwqGhBM9plV
-Sort data.txt | uniq -u      or       sort data.txt | uniq -c (and see which line has count = 1)
-(Password found)UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+Login using - ssh bandit7@bandit.labs.overthewire.org -p 2220<br>
+Password:HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs<br>
+Ls<br>
+Grep ‘millionth’ data.txt<br>
+(Password found)cvX2JJa4CFALtqS87jk27qwqGhBM9plV<br>
+
+### LEVEL-8 > 9
+Login using - ssh bandit8@bandit.labs.overthewire.org -p 2220<br>
+Password:cvX2JJa4CFALtqS87jk27qwqGhBM9plV<br>
+Sort data.txt | uniq -u      or       sort data.txt | uniq -c (and see which line has count = 1) <br>
+(Password found)UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR<br>
 
 
 ### LEVEL-9 > 10
-Login using - ssh bandit9@bandit.labs.overthewire.org -p 2220
-Password:UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
-Strings data.txt
-(Password found)truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+Login using - ssh bandit9@bandit.labs.overthewire.org -p 2220<br>
+Password:UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR<br>
+Strings data.txt<br>
+(Password found)truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk<br>
 
 
 ### LEVEL-10 > 11
-Login using - ssh bandit10@bandit.labs.overthewire.org -p 2220
-Password:truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
-Cat data.txt | base64 --decode
-(Password found)IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+Login using - ssh bandit10@bandit.labs.overthewire.org -p 2220<br>
+Password:truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk<br>
+Cat data.txt | base64 --decode<br>
+(Password found)IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR<br>
 
 
 ### LEVEL-11 > 12
-Login using - ssh bandit11@bandit.labs.overthewire.org -p 2220
-Password:IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
-Cat data.txt |  tr '[A-Za-z]' '[N-ZA-Mn-za-m]'    or  download a rot13 decoder (tr - translate command)
-(Password found)5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+Login using - ssh bandit11@bandit.labs.overthewire.org -p 2220<br>
+Password:IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR<br>
+Cat data.txt |  tr '[A-Za-z]' '[N-ZA-Mn-za-m]'    or  download a rot13 decoder (tr - translate command)<br>
+(Password found)5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu<br>
 
 
 
 ### LEVEL-12 > 13
-Login using - ssh bandit12@bandit.labs.overthewire.org -p 2220
-Password:5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+Login using - ssh bandit12@bandit.labs.overthewire.org -p 2220<br>
+Password:5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu<br>
 
 ```
 bandit12@bandit:~$ ls
