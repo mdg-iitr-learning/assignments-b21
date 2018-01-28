@@ -1,6 +1,5 @@
 # Basics of Android layouts and views<br><br> 
-**STRUCTURE**
-    <center>![ViewStructure](./view_structure.png)</center><br>
+<center>![ViewStructure](./view_structure.png)</center><br>
 
 ## What is a ViewGroup?
 A viewgroup is a parent class of all the views. It holds all the children views (and viewgroups) within, as depicted by the structure above.<br>
@@ -9,11 +8,10 @@ A viewgroup is a parent class of all the views. It holds all the children views 
 - **Absolute Layout**
     - By using an Absolute Layout, you can specify the exact locations (x/y coordinates) of its children.
     - They are less flexible and harder to maintain, rarely used nowadays.
-    - One needs to remember too many coordinate values for placing a view at a position, it would rather be much easier to remember a view with respect to which one needs to place a view on screen.<br>
+    - One needs to remember too many coordinate values for placing a view at a position, it would rather be much easier to remember a view with respect to which one needs to place a view on screen.<br><br>
     
-**Usage**  
-
-        
+    **Usage**<br><br> 
+        ```        
         <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
@@ -30,35 +28,33 @@ A viewgroup is a parent class of all the views. It holds all the children views 
                android:layout_x="225px"
                android:layout_y="361px" />
         </AbsoluteLayout> 
-
-<br>
+        ```
+<br><br>
 
 - **Frame Layout**
     - It is usually used to block out an area on the screen and display only a single child on screen.
     - If multiple children are used within it then all the children are placed on top of each other.
     - Position of children can only be controlled by assigning gravity to them.
-    - Usually used to display single fragments on screen.<br>
+    - Usually used to display single fragments on screen.<br><br>
 
-**Usage**  
+    **Usage**<br><br>  
+     ```  
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView 
+           android:src="@drawable/ic_launcher"
+           android:layout_height="250px"
+           android:layout_width="250px"/>
 
-        
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" 
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-   
-            <ImageView 
-               android:src="@drawable/ic_launcher"
-               android:layout_height="250px"
-               android:layout_width="250px"/>
-            
-            <TextView
-               android:text="Frame Demo"
-               android:layout_height="match_parent"
-               android:layout_width="match_parent"
-               android:gravity="center"/>
-        </FrameLayout>
-
-<br>
+        <TextView
+           android:text="Frame Demo"
+           android:layout_height="match_parent"
+           android:layout_width="match_parent"
+           android:gravity="center"/>
+    </FrameLayout>
+    ```
+<br><br>
 
 - **Linear Layout**
     - Aligns the children views either horizontally or vertically.
@@ -73,12 +69,12 @@ A viewgroup is a parent class of all the views. It holds all the children views 
 - **Relative Layout**
     - Relative Layout enables you to specify how child views are positioned relative to each other.
     - The position of each view can be specified as relative to sibling elements or relative to the parent.<br><br>
-        
         > Some common attribute usages in relative layout:<br>
-          * Difference between `android:layout_alignRight` and `android:layout_toRightOf` :
-            `android:layout_alignRight` is used to align a view's rightmost edge to the rightmost edge of the specified view, whereas `android:layout_toRightOf` is used to place a view to the right of the specified view *ie* the left edge of a view is  postioned to the right of the specified view.<br>
-          * Why to prefer `android:layout_toEndOf` instead of `android:layout_toRightOf`:
-            The views have LTR(left-to-right) orientation by default *ie* they start from left and end towards their right, but this  orientation can be changed to RTL(right-to-left) where views start from right and end towards left. In such cases,the  views with the attribute `android:layout_toEndOf` will correctly align to the end w.r.t the view specified whereas `android:layout_toRightOf` will still align it towards the right.
+        Difference between `android:layout_alignRight` and `android:layout_toRightOf` :
+        `android:layout_alignRight` is used to align a view's rightmost edge to the rightmost edge of the specified view, whereas `android:layout_toRightOf` is used to place a view to the right of the specified view *ie* the left edge of a view is  postioned to the right of the specified view.<br><br>
+        Why to prefer `android:layout_toEndOf` instead of `android:layout_toRightOf`:<br>
+        The views have LTR(left-to-right) orientation by default *ie* they start from left and end towards their righ, butthis  orientation can be changed to RTL(right-to-left) where views start from right and end towards left. In suchcses,the  views with the attribute `android:layout_toEndOf` will correctly align to the end w.r.t the view specifiedwhereas `android:layout_toRightOf` will still align it towards the right.
+        
     - Read more about Relative Layout [here](https://developer.android.com/guide/topics/ui/layout/relative.html) and [here](https://developer.android.com/reference/android/widget/RelativeLayout.html).<br><br>
 
         > **TRIVIA**: Relative Layout measures a view twice, whereas Linear Layout measures only once (if weights are not used)!<br>
@@ -107,20 +103,23 @@ A viewgroup is a parent class of all the views. It holds all the children views 
     - The layout editor uses constraints to identify the position of a view on the screen.
     - The attributes like `android:layout_constraintTop_toTopOf`, `android:layout_constraintTop_toBottomOf` and other similar attributes are used to set constraints to views w.r.t. other views.
     - It supports **chaining** of views, using which the views can be easily positioned over a space, and works much better than using a combo of weights and gravity to achieve a configuration. The attributes `android:layout_constraintHorizontal_chainStyle` and `android:layout_constraintVertical_chainStyle` can be supplied various values to produce the following effects:<br><br>
-          <center>![chains](chains.png)</center><br><br>
+            
+        <center>![chains](chains.png)</center><br><br>
     - Supports horizontal and vertical bias,by which we can tweak the positioning to favor one side over another using the bias attributes.<br><br>
+        **Usage:**<br><br>
 
-    **Usage:** 
-    <br><br>
-
-            <android.support.constraint.ConstraintLayout ...>
-                <Button android:id="@+id/button" ...
-                  app:layout_constraintHorizontal_bias="0.3"
-                  app:layout_constraintLeft_toLeftOf="parent"
-                  app:layout_constraintRight_toRightOf="parent/>
-    - The above code produces a button like:<br><br>
-    ![bias](./bias.png) <br><br>
+        ```
+        <android.support.constraint.ConstraintLayout ...>
+            <Button android:id="@+id/button" ...
+              app:layout_constraintHorizontal_bias="0.3"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintRight_toRightOf="parent/>
+        ```
+        The above code produces a button like:<br><br>
+        ![bias](./bias.png) <br><br>
     - It also provides a view called `Guideline` using which you can have an imaginary line (which is not a view) anywhere on the screen and position views according to it. You can position this guideline by providing it either a fixed value or a percentage value (w.r.t. the screen). 
+
+<br>
 
 - **Coordinator Layout**
     - CoordinatorLayout is a super-powered FrameLayout.
