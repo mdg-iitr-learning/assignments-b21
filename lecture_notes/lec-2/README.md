@@ -1,4 +1,4 @@
-# Basics of Android layouts and views.<br><br> 
+# Basics of Android layouts and views<br><br> 
 **STRUCTURE**
     <center>![ViewStructure](./view_structure.png)</center><br>
 
@@ -130,22 +130,22 @@ A viewgroup is a parent class of all the views. It holds all the children views 
     - By specifying Behaviors for child views of a CoordinatorLayout you can provide many different interactions within a single parent and those views can also interact with one another. View classes can specify a default behavior when used as a child of a CoordinatorLayout using the DefaultBehavior annotation.
 
 ## What is a List View?
-- A list view is an adapter view that does not know the details, such as type and contents, of the views it contains. Instead list view requests views on demand from a ListAdapter as needed, such as to display new views as the user scrolls up or down.
-- ListView attempts to reuse view objects in order to improve performance and avoid a lag in response to user scrolls. To take advantage of this feature, check if the convertView provided to getView(...) is null before creating or inflating a new view object.(But this is not a default feature of List View We have to implement it)
+- A list view is an adapter view that does not know the details, such as type and contents, of the views it contains. Instead list view requests views on demand from a `ListAdapter` as needed, such as to display new views as the user scrolls up or down.
+- ListView attempts to reuse view objects in order to improve performance and avoid a lag in response to user scrolls. To take advantage of this feature, check if the convertView provided to `getView(...)` is null before creating or inflating a new view object(but this is not a default feature of listView, we have to implement it)
 
 ## What is a Recycler View?
 - A flexible view for providing a limited window into a large data set.
 - List View creates the view objects of all elements but Recycler View recycles those view objects which are not present at the screen.
-- To implement Recycler View we have to make classes which extends RecyclerView.Adapter<ViewHolder> and RecyclerView.ViewHolder and then call RecyclerView.setAdapter(Your Adapter).
-- View Holder class will manage all the tasks related to instantiation of view objects and adapter will act as a bridge between Recycler View and View Holder.
+- To implement Recycler View we have to make classes which extends `RecyclerView.Adapter<ViewHolder>` and `RecyclerView.ViewHolder` and then call `RecyclerView.setAdapter(Your Adapter)`.
+- `ViewHolder` class will manage all the tasks related to instantiation of view objects and adapter will act as a bridge between Recycler View and View Holder.
     
 ## List View vs Recycler View
 - **Reuses cells while scrolling up/down** - this is possible with implementing View Holder in the listView adapter, but it was an optional thing, while in the RecycleView it's the default way of writing adapter.
-- **Decouples list from its container** - so you can put list items easily at run time in the different containers (linearLayout, gridLayout) with setting LayoutManager.
-- **Animates common list actions** - Animations are decoupled and delegated to ItemAnimator.
+- **Decouples list from its container** - so you can put list items easily at run time in the different containers (linearLayout, gridLayout) with setting `LayoutManager`.
+- **Animates common list actions** - Animations are decoupled and delegated to `ItemAnimator`.
     
 ## What is an Adapter and AdapterView?
-- Whenever Data is dynamic and is determined at runtime, we have to use an AdapterView like ListView, GridView, Spinner etc. to load views.
+- Whenever data is dynamic and is determined at runtime, we have to use an `AdapterView` like `ListView`, `GridView`, `Spinner` etc. to load views.
 - An Adapter object acts as a bridge between an AdapterView and the underlying data for that view. 
 - The Adapter provides access to the data items.
 - The Adapter is also responsible for making a View for each item in the data set.
