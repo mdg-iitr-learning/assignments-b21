@@ -74,11 +74,11 @@ A viewgroup is a parent class of all the views. It holds all the children views 
     - Relative Layout enables you to specify how child views are positioned relative to each other.
     - The position of each view can be specified as relative to sibling elements or relative to the parent.<br><br>
         
-        > Some common attribute usages in relative layout:
-        - Difference between `android:layout_alignRight` and `android:layout_toRightOf` :
-        `android:layout_alignRight` is used to align a view's rightmost edge to the rightmost edge of the specified view, whereas `android:layout_toRightOf` is used to place a view to the right of the specified view *ie* the left edge of a view is postioned to the right of the specified view.
-        - Why to prefer `android:layout_toEndOf` instead of `android:layout_toRightOf`:
-        The views have LTR(left-to-right) orientation by default *ie* they start from left and end towards their right, but this orientation can be changed to RTL(right-to-left) where views start from right and end towards left. In such cases, the views with the attribute `android:layout_toEndOf` will correctly align to the end w.r.t the view specified whereas `android:layout_toRightOf` will still align it towards the right.
+        > Some common attribute usages in relative layout:<br>
+          * Difference between `android:layout_alignRight` and `android:layout_toRightOf` :
+            `android:layout_alignRight` is used to align a view's rightmost edge to the rightmost edge of the specified view, whereas `android:layout_toRightOf` is used to place a view to the right of the specified view *ie* the left edge of a view is  postioned to the right of the specified view.<br>
+          * Why to prefer `android:layout_toEndOf` instead of `android:layout_toRightOf`:
+            The views have LTR(left-to-right) orientation by default *ie* they start from left and end towards their right, but this  orientation can be changed to RTL(right-to-left) where views start from right and end towards left. In such cases,the  views with the attribute `android:layout_toEndOf` will correctly align to the end w.r.t the view specified whereas `android:layout_toRightOf` will still align it towards the right.
     - Read more about Relative Layout [here](https://developer.android.com/guide/topics/ui/layout/relative.html) and [here](https://developer.android.com/reference/android/widget/RelativeLayout.html).<br><br>
 
         > **TRIVIA**: Relative Layout measures a view twice, whereas Linear Layout measures only once (if weights are not used)!<br>
