@@ -1,5 +1,6 @@
 # Basics of Android layouts and views<br><br> 
-<center>![ViewStructure](./view_structure.png)</center><br>
+**Structure**<br><br>
+    <center>![ViewStructure](./view_structure.png)</center><br>
 
 ## What is a ViewGroup?
 A viewgroup is a parent class of all the views. It holds all the children views (and viewgroups) within, as depicted by the structure above.<br>
@@ -8,10 +9,10 @@ A viewgroup is a parent class of all the views. It holds all the children views 
 - **Absolute Layout**
     - By using an Absolute Layout, you can specify the exact locations (x/y coordinates) of its children.
     - They are less flexible and harder to maintain, rarely used nowadays.
-    - One needs to remember too many coordinate values for placing a view at a position, it would rather be much easier to remember a view with respect to which one needs to place a view on screen.<br><br>
+    - One needs to remember too many coordinate values for placing a view at a position, it would rather be much easier to remember a view with respect to which one needs to place a view on screen.<br>
     
-    **Usage**<br><br> 
-        ```        
+    **Usage**<br><br>
+    ```        
         <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
@@ -28,7 +29,7 @@ A viewgroup is a parent class of all the views. It holds all the children views 
                android:layout_x="225px"
                android:layout_y="361px" />
         </AbsoluteLayout> 
-        ```
+    ```
 <br><br>
 
 - **Frame Layout**
@@ -103,8 +104,7 @@ A viewgroup is a parent class of all the views. It holds all the children views 
     - The layout editor uses constraints to identify the position of a view on the screen.
     - The attributes like `android:layout_constraintTop_toTopOf`, `android:layout_constraintTop_toBottomOf` and other similar attributes are used to set constraints to views w.r.t. other views.
     - It supports **chaining** of views, using which the views can be easily positioned over a space, and works much better than using a combo of weights and gravity to achieve a configuration. The attributes `android:layout_constraintHorizontal_chainStyle` and `android:layout_constraintVertical_chainStyle` can be supplied various values to produce the following effects:<br><br>
-            
-        <center>![chains](chains.png)</center><br><br>
+            <center>![chains](chains.png)</center><br><br>
     - Supports horizontal and vertical bias,by which we can tweak the positioning to favor one side over another using the bias attributes.<br><br>
         **Usage:**<br><br>
 
