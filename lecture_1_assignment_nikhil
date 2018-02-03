@@ -1,0 +1,68 @@
+1) bandit-0 -> ssh bandit0@bandit.labs.overthewire.org -p 2220
+
+username-bandit0
+password-bandit0
+
+2) 0->1
+cd bandit0 
+ls
+file readme
+cat readme
+
+3) 1->2
+bandit1 password
+
+cd ..
+cd bandit1
+cat ./-
+
+4) bandit2 
+cat spaces/ in/ this/ filename -
+
+5) bandit3 
+cd inhere
+ls-a
+cat .hidden
+file inhere /*
+
+4->5
+cd inhere
+cat ./-file07
+
+5->6
+ls-al* maybehere07
+.file2 -> cat .file2
+key- DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+6->7
+find / -size 33c -user bandit 7- group bandit6 2>/dev/null
+cat /var/lib/dbhg/bandit7.password
+key- HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+7->8
+grep "millionth" data.txt
+key- cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+8->9
+bandit8
+ls
+cat data.txt | sort | uniq -u
+key- UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+9->10
+ls
+strings data.txt | grep "="
+key- truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+10->11
+ls
+cat data.txt
+cat data.txt | base64 --decode
+key- IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+11->12
+ls 
+cat data.txt
+cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+key- 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
