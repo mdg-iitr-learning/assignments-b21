@@ -32,7 +32,7 @@ Fragment's lifecycle is directly affected by the host activity's lifecycle. For 
   ![](https://developer.android.com/images/activity_lifecycle.png)
 
     
-`onCreate()` is called when the system first creates the activity.
+- `onCreate()` is called when the system first creates the activity.
     
 ```java
 @Override
@@ -52,7 +52,7 @@ public void onCreate(Bundle savedInstanceState) {
 }
 ```
     
-`onStart()` is called as the app prepares for the activity to enter the foreground and become interactive. 
+- `onStart()` is called as the app prepares for the activity to enter the foreground and become interactive. 
 
 ```java
  @Override
@@ -61,7 +61,7 @@ public void onCreate(Bundle savedInstanceState) {
  }
 ```
  
-`onResume()`  is called when the activity enters the resumed state, and comes to the foreground. This is the state in        which the app interacts with the user.
+- `onResume()`  is called when the activity enters the resumed state, and comes to the foreground. This is the state in        which the app interacts with the user.
     
 ```java
 @Override
@@ -69,7 +69,7 @@ public void onResume() {
     super.onResume();  // Always call the superclass method first
 }
 ```
-`onPause()` is called when the activity loses focus but is partially visible.
+- `onPause()` is called when the activity loses focus but is partially visible.
 
 ```java
 @Override
@@ -78,7 +78,7 @@ public void onPause() {
 }
 ```    
 
-`onStop()` When your activity is no longer visible to the user, it has entered the Stopped state, and the system invokes the onStop() callback. You should also use onStop() to perform relatively CPU-intensive shutdown operations. 
+- `onStop()` When your activity is no longer visible to the user, it has entered the Stopped state, and the system invokes the onStop() callback. You should also use onStop() to perform relatively CPU-intensive shutdown operations. 
 
 ```java
 @Override
@@ -95,65 +95,65 @@ protected void onStop() {
 }
 ```
 
-`onDestroy()` Called before the activity is destroyed. This is the final call that the activity receives.
+- `onDestroy()` Called before the activity is destroyed. This is the final call that the activity receives.
 
   * #### Fragment lifecycle
   ![](https://developer.android.com/images/fragment_lifecycle.png)
 
-    - `onAttach()` is called by the managing activity when a fragment is first attach.
+- `onAttach()` is called by the managing activity when a fragment is first attach.
+
+```java
+@Override
+public void onAttach(Context context) {
+    super.onAttach(context);
+}
+```
+
+- `onCreateView()` onCreate() is called, followed by onCreateView(). onCreateView() is where you set up your user interface
+
+```java
+@Nullable
+@Override
+public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+  return super.onCreateView(inflater, container, savedInstanceState);
+}  
+```
+- `onActivtyCreated()` Beyond the onCreateView(), onActivityCreated() is where the heavy lifting occurs. That is called in conjunction with an activity’s onCreate method, so anything that you may want to do within the latter, you would do here:
+
+  ```java
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+      super.onActivityCreated(savedInstanceState);
+    }
+  ```
+- `onDestroyView()`In the process of the fragments being broken down, onDestroyView() is called. That is where you clean up anything that goes on with your views to ensure that system resources themselves are saved. You want to make sure to unregister things like button clicks, text listeners or checkbox listeners in here:
+
+```java
+  @Override
+  public void onDestroyView() {
+      super.onDestroyView();
+  }
+
+```
+- `onDetach()` onDetach() is the last lifecycle method before a fragment is fully detached from an activity. At this point, the fragment is no longer available, and any type of call to get to that parent activity’s context through getActivity will return null, and cause a NullPointerException.
+
+```java
+  @Override
+  public void onDetach() {
+    super.onDetach();
+  }
+```
+- `newInstance()`One additional part of the setup for a fragment is to create a newInstance() method. That allows the creation of a fragment. It is where you set some default data in order to use, for example: title strings, or various pieces of primitive data, which you want to make sure is always there.
+  + To use newInstance(), you must always create an empty constructor. That is part of what goes into creating a fragment; similar to activity in some sense. newInstance() takes a bundle, and uses key-value pairs to set and later get these various pieces of data in your onCreateView() method:
 
     ```java
-      @Override
-      public void onAttach(Context context) {
-          super.onAttach(context);
-      }
+    public static MyFragment newInstance() {
+      Bundle args = new Bundle();
+      MyFragment mFragment = new MyFragment();
+      mFragment.setArguments(args);
+      return mfragment;
+    }
     ```
-
-    - `onCreateView()` onCreate() is called, followed by onCreateView(). onCreateView() is where you set up your user interface
-
-    ```java
-      @Nullable
-      @Override
-      public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
-      }  
-    ```
-    - `onActivtyCreated()` Beyond the onCreateView(), onActivityCreated() is where the heavy lifting occurs. That is called in conjunction with an activity’s onCreate method, so anything that you may want to do within the latter, you would do here:
-
-    ```java
-      @Override
-      public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-      }
-    ```
-    - `onDestroyView()`In the process of the fragments being broken down, onDestroyView() is called. That is where you clean up anything that goes on with your views to ensure that system resources themselves are saved. You want to make sure to unregister things like button clicks, text listeners or checkbox listeners in here:
-
-    ```java
-      @Override
-      public void onDestroyView() {
-          super.onDestroyView();
-      }
-
-    ```
-    - `onDetach()` onDetach() is the last lifecycle method before a fragment is fully detached from an activity. At this point, the fragment is no longer available, and any type of call to get to that parent activity’s context through getActivity will return null, and cause a NullPointerException.
-
-    ```java
-      @Override
-      public void onDetach() {
-        super.onDetach();
-      }
-    ```
-    - `newInstance()`One additional part of the setup for a fragment is to create a newInstance() method. That allows the creation of a fragment. It is where you set some default data in order to use, for example: title strings, or various pieces of primitive data, which you want to make sure is always there.
-      + To use newInstance(), you must always create an empty constructor. That is part of what goes into creating a fragment; similar to activity in some sense. newInstance() takes a bundle, and uses key-value pairs to set and later get these various pieces of data in your onCreateView() method:
-
-        ```java
-        public static MyFragment newInstance() {
-          Bundle args = new Bundle();
-          MyFragment mFragment = new MyFragment();
-          mFragment.setArguments(args);
-          return mfragment;
-        }
-        ```
 
 ### Fragment Manager
 A fragment manager is this encompassing method that helps manage fragments, pulling them in and out, moving them, adding them, removing and replacing them, and even helping in restoring them.
