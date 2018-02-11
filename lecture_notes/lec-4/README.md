@@ -270,6 +270,104 @@ LoaderCallbacks is where everything actually happens. And by ‘everything’, w
 
 ![](https://i.stack.imgur.com/6RauY.png)
 
+### ViewModel
+The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way. The ViewModel class allows data to survive configuration changes such as screen rotations.
+
+```java
+public class MyViewModel extends ViewModel {
+    private MutableLiveData<List<User>> users;
+    public LiveData<List<User>> getUsers() {
+        if (users == null) {
+            users = new MutableLiveData<List<Users>>();
+            loadUsers();
+        }
+        return users;
+    }
+
+    private void loadUsers() {
+        // Do an asyncronous operation to fetch users.
+    }
+}
+```
+
+You can then access the list from an activity as follows:
+
+```java
+public class MyActivity extends AppCompatActivity {
+    public void onCreate(Bundle savedInstanceState) {
+        // Create a ViewModel the first time the system calls an activity's onCreate() method.
+        // Re-created activities receive the same MyViewModel instance created by the first activity.
+
+        MyViewModel model = ViewModelProviders.of(this).get(MyViewModel.class);
+        model.getUsers().observe(this, users -> {
+            // update UI
+        });
+    }
+}
+```
+
+If the activity is re-created, it receives the same MyViewModel instance that was created by the first activity. When the owner activity is finished, the framework calls the ViewModel objects's onCleared() method so that it can clean up resources.
+
+![](https://developer.android.com/images/topic/libraries/architecture/viewmodel-lifecycle.png)
+
+View Model is also very helpful for sharing data between fragments.
+
+### Live Data
+
+LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.
+
+```java
+public class NameViewModel extends ViewModel {
+
+// Create a LiveData with a String
+private MutableLiveData<String> mCurrentName;
+
+    public MutableLiveData<String> getCurrentName() {
+        if (mCurrentName == null) {
+            mCurrentName = new MutableLiveData<String>();
+        }
+        return mCurrentName;
+    }
+
+// Rest of the ViewModel...
+}
+```
+
+Generally, LiveData delivers updates only when data changes, and only to active observers. An exception to this behavior is that observers also receive an update when they change from an inactive to an active state.
+
+```java
+public class NameActivity extends AppCompatActivity {
+
+    private NameViewModel mModel;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Get the ViewModel.
+        mModel = ViewModelProviders.of(this).get(NameViewModel.class);
+
+        // Create the observer which updates the UI.
+        final Observer<String> nameObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String newName) {
+                // Update the UI, in this case, a TextView.
+                mNameTextView.setText(newName);
+            }
+        };
+
+        // Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
+        mModel.getCurrentName().observe(this, nameObserver);
+    }
+}
+```
+
+### Saving States
+When it's time for the user to return to the activity, there are two possible scenarios for recreating the activity:
+
+The activity is recreated after having been stopped by the system. The activity has the query saved in an onSaveInstanceState() bundle, and should pass the query to the ViewModel. The ViewModel sees that it has no search results cached, and delegates loading the search results, using the given search query.
+
+The activity is created after a configuration change. The activity has the query saved in an onSaveInstanceState() bundle, and the ViewModel already has the search results cached. You pass the query from the onSaveInstanceState() bundle to the ViewModel, which determines that it already has loaded the necessary data and that it does not need to re-query the database.
+
 ### More to explore
 * ViewPager
 * Navigation Drawer.
