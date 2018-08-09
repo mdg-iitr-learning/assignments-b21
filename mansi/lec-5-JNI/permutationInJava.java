@@ -9,7 +9,10 @@ public class permutationInJava{
 
 	static void permute(int a[], int size){
 		if (size==1) {
-			print(a);
+				for (int i=0; i<a.length ; i++) {
+					System.out.print(a[i]+" ");
+				}
+				System.out.println("");
 		}
 		else{
 			for (int i=0; i<size; i++) {
@@ -32,7 +35,7 @@ public class permutationInJava{
 	public static void main(String args[]){
 		long startTime = System.nanoTime();
 		//Scanner in = new Scanner(System.in);
-		int n = 6;
+		int n = 8;
 		int[] arr = new int[n];
 		int k=1;
 		int l = 2;
