@@ -11,8 +11,6 @@ public class Permutations{
 	    long startTime = System.nanoTime();
 		int n = 8;
 		int[] arr = new int[n];
-		int k=1;
-		int l = 2;
 		for (int j=0; j<n ;j++ ) {
 			arr[j] = j;
 		}

@@ -37,17 +37,8 @@ public class permutationInJava{
 		//Scanner in = new Scanner(System.in);
 		int n = 8;
 		int[] arr = new int[n];
-		int k=1;
-		int l = 2;
 		for (int j=0; j<n ;j++ ) {
-			if (j%2==0) {
-				arr[j] = k;
-				k+=3;
-			}
-			else{
-				arr[j] = l ;
-				l+=3;
-			}
+			arr[j] = j;
 		}
 		permutationInJava.permute(arr, n);
 		long endTime   = System.nanoTime();
