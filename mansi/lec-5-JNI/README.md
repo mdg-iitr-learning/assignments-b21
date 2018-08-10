@@ -5,6 +5,7 @@ This program runs a code written in C through Java using Java Native Interface (
 ## Results
 
 Below are the outputs of codes written in Java and C (usage of JNI):
+(for an integer array of 8 elements)
 
 Java Output:
 https://gist.github.com/Mansi449/1901a37c1a92b4f163dff25c031ac360
