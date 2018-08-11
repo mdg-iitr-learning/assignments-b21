@@ -3,6 +3,7 @@
 ################### part one (java program)##############
 
 make java class with the layout:
+
 public class ClassName {
 	public native <returntype> <name>(<arguments>);
 
