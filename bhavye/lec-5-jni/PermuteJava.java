@@ -1,4 +1,4 @@
-public class JNIAssignment 
+public class PermuteJava
 {
 	public static void permute(int[] arr){
     	permuteHelper(arr, 0);
