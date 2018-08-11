@@ -3,8 +3,9 @@
 ################### part one (java program)##############
 
 make java class with the layout:
-
+```
 public class ClassName {
+
 	public native <returntype> <name>(<arguments>);
 
 	static { System.loadLibrary("HelloImpl"); }
@@ -12,33 +13,36 @@ public class ClassName {
 	public static void main(String[]  args){
 		ClassName obj = new ClassName();
 		obj.<name>(<arguments>);
-	}	
+	}
 }
 
-// library filename will be called libHelloImpl.so (Unix) 
-// but when loaded in java, it has to be loaded as HelloImpl
+```
+NOTE:
+Library filename will be called libHelloImpl.so (Unix) 
+but when loaded in java, it has to be loaded as HelloImpl
 
 
 ################### part two (header file generation) ####################
 
 Use the JDK javah utility to generate the header file "classname.h" with a function prototype for the sayHi method:
-
+```
 ~$ javac -d ./classes/ Hello.java
-
+```
 Then in the classes directory run:
-
+```
 ~$ javah -jni Hello 
-
+```
 to generate the header file Hello.h
 
 
 ################### part three (C file) ###########################
 
 to view the .h file,
+```
 ~$ cat Hello.h
-
+```
 in C file, follow the following layout:
-
+```
 #include <stdio.h>
 #include "Hello.h"
 
@@ -63,7 +67,7 @@ JNIEXPORT void JNICALL Java_Hello_sayHi(JNIEnv *env, jobject obj, <arg 1>, <arg 
   }
 }
 
-
+```
 NOTE:
 1) If you want to access other functions in the C file,
    (some non native functions like maybe void printArray(int[] arr))
@@ -78,14 +82,15 @@ NOTE:
 
 Save the C file in the ./classes directory with the header file and compiled java class. 
 For compilation, write:
-
+```
 ~$ gcc -I/usr/lib/jvm/java-9-oracle/include/ -I/usr/lib/jvm/java-9-oracle/include/linux  -o libHelloImpl.so -shared Permutations.c
-
+```
 This created the library file libHelloImpl.so which is to be loaded in the java class.
 Then set the LD_LIBRARY_PATH to current working directory:
-
+```
 ~$ export LD_LIBRARY_PATH=.
-
+```
 Finally, run your application in the directory where your compiled classes are stored ("classes" in this case):
-
+```
 ~$ java ClassName
+```
