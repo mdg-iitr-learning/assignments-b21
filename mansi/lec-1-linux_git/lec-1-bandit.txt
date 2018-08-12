@@ -1,0 +1,78 @@
+LEVEL 0:
+ssh -p 2220 bandit0@bandit.labs.overthewire.org
+password: bandit0
+
+LEVEL 0->1:
+ls
+cat readme
+exit
+ssh -p 2220 bandit1@bandit.labs.overthewire.org
+password: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+LEVEL 1->2:
+ls
+cat ./-
+exit
+ssh -p 2220 bandit2@bandit.labs.overthewire.org
+password: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+LEVEL 2->3
+ls
+cat spaces\ in\ this\ filename
+exit
+ssh -p 2220 bandit3@bandit.labs.overthewire.org
+password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+LEVEL 3->4
+ls
+cd inhere
+ls -a
+cat .hidden
+exit
+ssh -p 2220 bandit4@bandit.labs.overthewire.org
+password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+LEVEL 4->5
+ls
+cd inhere
+ls
+cat ./-file07
+exit
+ssh -p 2220 bandit5@bandit.labs.overthewire.org
+password: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+LEVEL 5->6
+ls
+cd inhere
+find -type f -size 1033c -exec ls {} \;
+cd maybehere07
+ls -a
+cat .file2
+ssh -p 2220 bandit6@bandit.labs.overthewire.org
+password: DxjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+LEVEL 6->7
+cd ..
+cd ..
+find -size 33c -user bandit7 -group bandit6
+cd ./var/lib/dpkg/info/
+cat bandit7.password
+exit
+ssh -p 2220 bandit7@bandit.labs.overthewire.org
+password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+LEVEL 7->8
+ls
+cat data.txt
+grep millionth data.txt
+exit
+ssh -p 2220 bandit8@bandit.labs.overthewire.org
+password: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+
+LEVEL 8->9
+ls
+sort data.txt | uniq -c
+exit
+ssh -p 2220 bandit9@bandit.labs.overthewire.org
+password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
