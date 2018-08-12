@@ -1,2 +1,2 @@
-# Ignore emacs generated files
-*~
+.DS_Store
+rohit/.DS_Store
