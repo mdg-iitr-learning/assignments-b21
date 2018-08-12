@@ -1,0 +1,126 @@
+Bandit Overthewire
+
+LEVEL-0
+
+to access the remote system,
+~$ ssh -p 2220 bandit0@bandit.labs.overthewire.org
+
+password:
+bandit0
+
+~$ ls
+~$ cat readme
+
+get password for level-1 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+~$ exit
+
+
+LEVEL-1
+
+~$ ssh -p 2220 bandit1@bandit.labs.overthewire.org
+~$ ls -a
+~$ cat ./-
+
+password for level 2: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+~$ exit
+
+
+LEVEL-2
+
+~$ ssh -p 2220 bandit2@bandit.labs.overthewire.org
+~$ ls
+~$ cat spaces\ in\ this\ filename
+
+password for level 3: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+~$ exit
+
+
+LEVEL-3
+
+~$ssh -p 2220 bandit3@bandit.labs.overthewire.org
+~$cd inhere
+~/inhere$ cat .hidden
+
+password for level 4: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+~$exit
+
+
+LEVEL-4
+
+~$ ssh -p 2220 bandit4@bandit.labs.overthewire.org
+~$ ls
+~$ cd inhere
+~$ ls -a
+~$ cat ./-file00
+~$ cat ./-file01
+~$ cat ./-file02
+~$ cat ./-file03
+~$ cat ./-file04
+~$ cat ./-file05
+~$ cat ./-file06
+~$ cat ./-file07
+
+password for level 5: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+
+LEVEL-5
+
+~$ ssh -p 2220 bandit5@bandit.labs.overthewire.org
+~$ cd inhere
+~$ ls -a
+~$ file maybehere*
+
+~$ cd maybehere00
+~$ file ./*
+~$ du -h ./*
+~$ cd ..
+
+~$ find . -type f -readable ! -executable -size 1033c
+~$ cd maybehere07
+~$ cat .file2
+
+password for level 6: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+
+LEVEL-6
+
+~$ ssh -p 2220 bandit6@bandit.labs.overthewire.org
+reused the find command
+~$ find / -group bandit6 -user bandit7 -size 33c
+~$ cat /var/lib/dpkg/info/bandit7.password
+
+password for level 7: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+
+LEVEL-7
+
+~$ ssh -p 2220 bandit7@bandit.labs.overthewire.org
+~$ ls
+~$ grep "millionth" data.txt
+
+password for level-8: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+
+LEVEL-8
+
+~$ ssh -p 2220 bandit8@bandit.labs.overthewire.org
+~$ ls
+~$ uniq --help
+~$ cat data.txt | uniq -u
+~$ clear
+~$ cat data.txt | sort | uniq -u
+
+password for level 9: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+
+
+
+
+
+
+
+
