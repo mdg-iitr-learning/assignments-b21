@@ -1,0 +1,121 @@
+---------------Level 0 to 1---------------------
+
+Commands->
+ls
+cat readme
+
+Password for bandit1 ->
+boJ9jbbUNNfktd7800psg0ltutMc3MY1
+
+---------------Level 1 to 2---------------------
+
+Commands->
+ls
+cat ./-
+
+Password for bandit2 ->
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+
+---------------Level 2 to 3---------------------
+
+Commands->
+ls
+cat spaces\ in\ this\ filename
+
+Password for bandit3->
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+
+---------------Level 3 to 4---------------------
+
+Commands->
+ls
+cd inhere
+ls -a
+cat ./.hidden
+
+
+Password for bandit4->
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+
+
+---------------Level 4 to 5---------------------
+
+Commands->
+ls
+cd inhere
+cat ./-file00
+cat ./-file01
+cat ./-file02
+cat ./-file03
+cat ./-file04
+cat ./-file05
+cat ./-file06
+cat ./-file07
+
+Password for bandit5->
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+---------------Level 5 to 6---------------------
+
+Commands->
+ls
+cd inhere
+find -size 1033c
+cd maybehere07
+cat ./.file2
+
+Password for bandit6->
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+---------------Level 6 to 7---------------------
+
+Commands->
+ls
+find -user bandit7 -group bandit6 -size 33c
+cat /var/lib/dpkg/info/bandit7.password
+
+Password for bandit7->
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTz
+
+---------------Level 7 to 8---------------------
+
+Commands->
+ls
+grep millionth data.txt
+
+Password for bandit8->
+cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+---------------Level 8 to 9---------------------
+
+Commands->
+ls
+cat data.txt | sort | uniq -q
+
+Password for bandit9->
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+
+---------------Level 9 to 10---------------------
+
+Commands->
+ls
+strings data.txt 
+
+Password for bandit10->
+truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+
+
+---------------Level 10 to 11---------------------
+
+Commands->
+ls
+cat data.txt | base64 -d
+
+Password for bandit11->
+IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
